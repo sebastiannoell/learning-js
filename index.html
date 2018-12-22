@@ -4,9 +4,10 @@
     <title>Learn Enough JavaScript</title>
     <meta charset="utf-8">
   <script>
-    let firstName = "Sebhold";
-    let lastName = "Nöllinger":
-    console.log(firstName, lastName);
+    const daysOfTheWeek = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+    let now = new Date();
+    let dayName = daysOfTheWeek[now.getDay()]
+    alert(`Moin Sebi, heute ist ${dayName}.`);
   </script>
   </head>
   <body>
