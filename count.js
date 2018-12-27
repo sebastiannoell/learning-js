@@ -14,7 +14,7 @@ If this be error and upon me proved,
 I never writ, nor no man ever loved.`;
 
 let uniques = new Map();
-let words = sonnet.match(/\w+/g);
+let words = sonnet.match(/[\w']+/g);
 
 for (let i = 0; i < words.length; i++) {
   let word = words[i];
