@@ -10,3 +10,9 @@ function isPalindrome(string) {
   string = string.toLowerCase();
   return string === reverse(string);
 }
+
+// Exercise returning parts of an email address
+function splitMail(mail) {
+  mail = String(mail).trim().toLowerCase();
+  return mail.split("@");
+}
