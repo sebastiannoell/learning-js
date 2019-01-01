@@ -60,3 +60,23 @@ console.log("Länderslugs: ", laenderSlugs);
 console.log("Länder mit Bindestrichen: ", laenderWithDashes);
 console.log("Länder mit Sachsen: ", laenderSachsen);
 console.log("URLs: ", laenderUrls);
+
+// Example 2 reducing
+// Getting the length of every String in our array.
+
+// Imperative solution:
+function imperativeLengths(array) {
+  let lengths = new Object();
+  array.forEach(el => (lengths[el] = el.length));
+  return lengths;
+}
+console.log("Längen: ", imperativeLengths(bundeslaender));
+
+// Functional solution:
+function functionalLength(array) {
+  return array.reduce((lengths, land) => {
+    lengths[land] = land.length;
+    return lengths
+  }, {});
+}
+console.log("Längen functional: ", functionalLength(bundeslaender));

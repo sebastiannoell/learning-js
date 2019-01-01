@@ -15,5 +15,3 @@ let totalAlt = numbers.reduce((total, el) => total += el, 0); // 0 is default in
 
 console.log("Ergebnis: ", sumOfElements(numbers));
 console.log("Ergebnis mit reduce(): ", totalAlt);
-
-// Example 2
