@@ -29,14 +29,34 @@ function urlify(string) {
     .split(/\s/g)
     .join("-");
 }
+// urlify every Bundesland
+let laenderSlugs = bundeslaender.map(land => urlify(land));
 
-let laender = bundeslaender.map(land => urlify(land));
-let laenderUrls = laender.map(land => baseUrl + land);
-let laenderWithDashes = laender.filter(land => land.split("-").length === 2);
-let laenderSachsen = laender.filter(land => land.includes("sachsen"));
+// Concat with baseURL
+let laenderUrls = laenderSlugs.map(land => baseUrl + land);
+
+// Filter only Länder with dashes
+let laenderWithDashes = laenderSlugs.filter(
+  land => land.split("-").length === 2
+);
+
+/* Alternative as imperative Function 
+    function imperativeSingles(elements) {
+      let singles = [];
+      elements.forEach(function(element) {
+        if (element.split("-").length === 1) {
+          singles.push(element);
+        }
+      });
+      return singles;
+    }
+    */
+
+// Filter Länder with `Sachsen` in it
+let laenderSachsen = laenderSlugs.filter(land => land.includes("sachsen"));
 
 console.log("Länder: ", bundeslaender);
-console.log("Länder urlified: ", laender);
-console.log("Länder mit Bindestrichen: ", laenderWithDashes)
-console.log("Länder mit Sachsen: ", laenderSachsen)
+console.log("Länderslugs: ", laenderSlugs);
+console.log("Länder mit Bindestrichen: ", laenderWithDashes);
+console.log("Länder mit Sachsen: ", laenderSachsen);
 console.log("URLs: ", laenderUrls);
