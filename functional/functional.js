@@ -16,7 +16,7 @@ const bundeslaender = [
   "Schleswig-Holstein",
   "Thüringen"
 ];
-const baseUrl = "https://js.test/"
+const baseUrl = "https://js.test/";
 
 function urlify(string) {
   return string
@@ -30,5 +30,13 @@ function urlify(string) {
     .join("-");
 }
 
-let urls = bundeslaender.map(land => baseUrl+urlify(land));
-console.log(urls);
+let laender = bundeslaender.map(land => urlify(land));
+let laenderUrls = laender.map(land => baseUrl + land);
+let laenderWithDashes = laender.filter(land => land.split("-").length === 2);
+let laenderSachsen = laender.filter(land => land.includes("sachsen"));
+
+console.log("Länder: ", bundeslaender);
+console.log("Länder urlified: ", laender);
+console.log("Länder mit Bindestrichen: ", laenderWithDashes)
+console.log("Länder mit Sachsen: ", laenderSachsen)
+console.log("URLs: ", laenderUrls);
