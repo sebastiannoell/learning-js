@@ -1,0 +1,30 @@
+html,body {
+  min-height: 100%;
+  height: 100%;
+}
+body {
+  display: flex;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+main {
+  align-self: center;
+  justify-self: center;
+  max-width: 30rem;
+  margin: auto;
+  padding: 1rem;
+  background-color: #eee;
+}
+
+form input, button {
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 1em;
+  background-color: #ddd;
+  border: 0;
+  font-size: 1.4rem
+}
+
+button {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: pink; 
+}

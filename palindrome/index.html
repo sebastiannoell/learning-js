@@ -1,9 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <title>Is you a palindrome?</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed"
+      rel="stylesheet"
+    />
     <script src="palindrome.js"></script>
-    <script></script>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <h1>Palindrom Checker</h1>
+      <p>
+        Als <strong>Palindrom</strong> (altgriechisch παλίνδρομος palíndromos
+        „rückwärts laufend“) werden in der Sprachwissenschaft Wörter, Wortreihen
+        oder Sätze bezeichnet, die rückwärts gelesen genau denselben Text oder
+        zumindest einen Sinn ergeben. Groß-/Kleinschreibung, Wortgrenzen und
+        Satzzeichen sind beim Rückwärtslesen gegebenenfalls zu ändern. (von
+        Wikipedia)
+      </p>
+      <form id="form" style="text-align: center;">
+        <input id="checker" type="text" />
+        <button type="submit">überprüfen</button>
+      </form>
+
+      <div id="response"></div>
+    </main>
+    <script>
+      const myForm = document.getElementById("form");
+      const userInputField = document.getElementById("checker");
+      const responseEl = document.getElementById("response");
+      let userInput = "";
+      
+      myForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        userInput = userInputField.value;
+        if (isPalindrome(userInput)) {
+          responseEl.innerHTML = "✅";
+        } else {
+          responseEl.innerHTML = "nö";
+        }
+      });
+    </script>
+  </body>
 </html>
