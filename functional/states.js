@@ -76,7 +76,7 @@ console.log("Längen: ", imperativeLengths(bundeslaender));
 function functionalLength(array) {
   return array.reduce((lengths, land) => {
     lengths[land] = land.length;
-    return lengths
+    return lengths;
   }, {});
 }
 console.log("Längen functional: ", functionalLength(bundeslaender));
