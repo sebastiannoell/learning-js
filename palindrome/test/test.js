@@ -21,7 +21,7 @@ describe("Phrase", function() {
     });
 
     it("should return true for a palindrome with punctuation", function() {
-      let punctuationPalindrome = new Phrase("Racing, gnicaR");
+      let punctuationPalindrome = new Phrase("Madam, I'm Adam.");
       assert(punctuationPalindrome.isPalindrome());
     });
   });

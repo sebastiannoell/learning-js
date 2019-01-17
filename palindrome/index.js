@@ -9,7 +9,10 @@ function Phrase(content) {
   this.content = content;
 
   this.processor = function(string) {
-    return string.toLowerCase();
+    let letters = string.toLowerCase().split(""); // convert string to Array
+    letters = letters.filter(letter => letter.match(/([a-z])+/g)); // filter out all special chars, A-Z only.
+    let result = letters.join("");
+    return result;
   };
 
   // Preprocess for case insensitive checking for palindromes
