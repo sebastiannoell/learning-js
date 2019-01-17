@@ -14,8 +14,7 @@ function Phrase(content) {
 
   // Preprocess for case insensitive checking for palindromes
   this.processContent = function processContent() {
-  //  return this.processor(this.content);
-  return this.content;
+  return this.processor(this.content);
   };
 
   // Returns true if the phrase is a palindrome, false otherwise.
