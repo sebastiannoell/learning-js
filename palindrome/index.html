@@ -32,12 +32,11 @@
       const myForm = document.getElementById("form");
       const userInputField = document.getElementById("checker");
       const responseEl = document.getElementById("response");
-      let userInput = "";
       
       myForm.addEventListener("submit", function(e) {
         e.preventDefault();
-        userInput = userInputField.value;
-        if (isPalindrome(userInput)) {
+        let userInput = new Phrase(userInputField.value);
+        if (userInput.isPalindrome()) {
           responseEl.innerHTML = "✅";
         } else {
           responseEl.innerHTML = "nö";
